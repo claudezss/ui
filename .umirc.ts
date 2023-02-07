@@ -13,6 +13,7 @@ export default defineConfig({
     default: 'en-US',
     baseSeparator: '-',
   },
+  favicons: ['https://www.svgrepo.com/show/36178/universe.svg'],
   routes: [
     {
       path: '/',

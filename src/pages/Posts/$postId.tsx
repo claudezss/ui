@@ -13,7 +13,8 @@ export default function PostPage() {
   async function refresh() {
     try {
       const res = await fetch(
-        '/api/get?target=homelab-api/post/?id=' + params.postId,
+        'https://proxy.claudezss.com/get?target=homelab-api/post/?id=' +
+          params.postId,
       );
       const post = await res.json();
       if (res.status === 200) {

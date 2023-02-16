@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
         }}
       >
         <h1 style={{ fontSize: 33, color: 'white' }}>
-          <b>HELP TO ACHIEVE ENERGY NET-ZERO</b>
+          <b>HELPING TO ACHIEVE NET-ZERO</b>
         </h1>
       </Card>
       <Row gutter={12} justify="space-evenly">

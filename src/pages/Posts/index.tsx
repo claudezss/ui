@@ -9,7 +9,9 @@ export default function Post() {
 
   async function refresh() {
     try {
-      const res = await fetch('/api/get?target=homelab-api/post/');
+      const res = await fetch(
+        'https://proxy.claudezss.com/get?target=homelab-api/post/',
+      );
       if (res.status !== 200) {
         console.error(await res.text());
       }

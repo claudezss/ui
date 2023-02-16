@@ -25,7 +25,22 @@ export default defineConfig({
       component: './Home',
       icon: 'home',
     },
+    {
+      name: 'posts',
+      path: '/posts',
+      component: './Posts',
+      icon: 'file',
+    },
+    { path: '/posts/:postId', component: './Posts/$postId' },
   ],
   npmClient: 'yarn',
   dva: {},
+  tailwindcss: {},
+  proxy: {
+    '/api': {
+      target: 'https://proxy.claudezss.com/',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
+    },
+  },
 });

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 // @ts-ignore
 import { PageContainer } from '@ant-design/pro-components';
 import { List, Tabs } from 'antd';
@@ -32,10 +32,6 @@ export default function Post() {
       console.error(err);
     }
   }
-
-  useEffect(() => {
-    refresh();
-  }, []);
 
   function genList() {
     refresh();

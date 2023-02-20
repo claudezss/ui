@@ -5,10 +5,10 @@ import { List, Tabs } from 'antd';
 import type { TabsProps } from 'antd';
 
 const URLS: string[] = [
-  'https://hnrss.org/best',
-  'https://hnrss.org/newest?q=Python',
-  'https://hnrss.org/newest?q=Golang',
-  'https://hnrss.org/newest?q=K8S',
+  'https://proxy.claudezss.com/other-get?t=https://hnrss.org/best',
+  'https://proxy.claudezss.com/other-get?t=https://hnrss.org/newest?q=Python',
+  'https://proxy.claudezss.com/other-get?t=https://hnrss.org/newest?q=Golang',
+  'https://proxy.claudezss.com/other-get?t=https://hnrss.org/newest?q=K8S',
 ];
 
 export default function Post() {

@@ -9,12 +9,14 @@ import {
   HeartOutlined,
   AndroidOutlined,
 } from '@ant-design/icons';
+import FloatButtonGroup from '@/components/FloatButtonGroup';
 
 const { Meta } = Card;
 const { Title, Paragraph, Text, Link } = Typography;
 const HomePage: React.FC = () => {
   return (
     <PageContainer ghost>
+      <FloatButtonGroup />
       <Card
         style={{
           backgroundImage: `url(${Earth})`,

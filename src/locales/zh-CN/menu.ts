@@ -3,4 +3,5 @@ export default {
   'menu.home': '首页',
   'menu.admin': '后台',
   'menu.posts': '文章',
+  'menu.rss': '订阅',
 };

@@ -32,6 +32,12 @@ export default defineConfig({
       icon: 'read',
     },
     { path: '/posts/:postId', component: './Posts/$postId' },
+    {
+      name: 'rss',
+      path: '/rss',
+      component: './RSS',
+      icon: 'NotificationOutlined',
+    },
   ],
   npmClient: 'yarn',
   dva: {},
@@ -41,6 +47,11 @@ export default defineConfig({
       target: 'https://proxy.claudezss.com/',
       changeOrigin: true,
       pathRewrite: { '^/api': '' },
+    },
+    '/rss-api': {
+      target: 'https://hnrss.org/',
+      changeOrigin: true,
+      pathRewrite: { '^/rss-api': '' },
     },
   },
 });

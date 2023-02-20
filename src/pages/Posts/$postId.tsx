@@ -5,6 +5,7 @@ import { PageContainer } from '@ant-design/pro-components';
 import ReactMarkdown from 'react-markdown';
 import BlogBG from '@/assets/imgs/blog.jpg';
 import Yan from '@/assets/imgs/yan.jpeg';
+import FloatButtonGroup from '@/components/FloatButtonGroup';
 
 export default function PostPage() {
   const params = useParams();
@@ -37,6 +38,7 @@ export default function PostPage() {
 
   return (
     <PageContainer ghost>
+      <FloatButtonGroup />
       <div className="max-w-screen overflow-x-hidden">
         {post === undefined && (
           <div className="fixed w-screen h-screen flex justify-center items-center">

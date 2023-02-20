@@ -29,7 +29,7 @@ export default defineConfig({
       name: 'posts',
       path: '/posts',
       component: './Posts',
-      icon: 'file',
+      icon: 'read',
     },
     { path: '/posts/:postId', component: './Posts/$postId' },
   ],

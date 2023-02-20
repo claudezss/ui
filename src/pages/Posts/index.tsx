@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { history } from 'umi';
 import { PageContainer } from '@ant-design/pro-components';
 import BlogBG from '@/assets/imgs/blog.jpg';
+import FloatButtonGroup from '@/components/FloatButtonGroup';
 
 export default function Post() {
   const [posts, setPosts] = useState<any[]>();
@@ -32,6 +33,7 @@ export default function Post() {
 
   return (
     <PageContainer ghost>
+      <FloatButtonGroup />
       <div className="flex flex-row w-full justify-center flex-wrap">
         {!posts && (
           <div className="fixed w-screen h-screen flex justify-center items-center">

@@ -49,7 +49,7 @@ export default defineConfig({
       pathRewrite: { '^/api': '' },
     },
     '/rss-api': {
-      target: 'https://hnrss.org/',
+      target: 'https://proxy.claudezss.com/',
       changeOrigin: true,
       pathRewrite: { '^/rss-api': '' },
     },

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // @ts-ignore
-import { useParams } from 'umi';
+import { useParams, useSearchParams } from 'umi';
 import { PageContainer } from '@ant-design/pro-components';
 import ReactMarkdown from 'react-markdown';
 import BlogBG from '@/assets/imgs/blog.jpg';
@@ -10,12 +10,14 @@ import FloatButtonGroup from '@/components/FloatButtonGroup';
 export default function PostPage() {
   const params = useParams();
   const [post, setPost] = useState<any>();
+  const [searchParams] = useSearchParams();
+
+  const title = searchParams.get('title');
 
   async function refresh() {
     try {
       const res = await fetch(
-        'https://proxy.claudezss.com/get?target=homelab-api/post/?id=' +
-          params.postId,
+        'https://proxy.claudezss.com/blog/' + params.postId,
       );
       const post = await res.json();
       if (res.status === 200) {
@@ -56,9 +58,7 @@ export default function PostPage() {
               />
               <div className="w-full h-full absolute top-0 right-0 bg-black bg-opacity-60" />
               <div className="w-full absolute lg:bottom-24 bottom-12 container lg:px-64 px-8">
-                <p className="text-white text-4xl font-extrabold">
-                  {post.title}
-                </p>
+                <p className="text-white text-4xl font-extrabold">{title}</p>
                 <div className="flex flex-row mt-8 align-bottom">
                   <img src={Yan} className="rounded-full h-8 w-8 mr-4" alt="" />
                   <p className="text-white text-xl font-extrabold opacity-80">

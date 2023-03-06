@@ -10,16 +10,15 @@ export default function Post() {
 
   async function refresh() {
     try {
-      const res = await fetch(
-        'https://proxy.claudezss.com/get?target=homelab-api/post/',
-      );
+      const res = await fetch('https://proxy.claudezss.com/blog');
       if (res.status !== 200) {
         console.error(await res.text());
       }
       setPosts(
         (await res.json()).sort(
           (p1: any, p2: any) =>
-            new Date(p2.createdAt).getTime() - new Date(p1.createdAt).getTime(),
+            new Date(p2.lastModifiedDateTime).getTime() -
+            new Date(p1.lastModifiedDateTime).getTime(),
         ),
       );
     } catch (err) {
@@ -48,7 +47,11 @@ export default function Post() {
             {posts.map((post) => (
               <div key={post.id} className="w-full lg:w-1/2 p-4">
                 <div
-                  onClick={() => history.push(`/posts/${post.id}`)}
+                  onClick={() =>
+                    history.push(
+                      `/posts/${post.id}?title=${post.name.replace('.md', '')}`,
+                    )
+                  }
                   className="w-full h-64 bg-white relative transition-all
           rounded-xl overflow-hidden cursor-pointer hover:shadow-xl"
                 >
@@ -62,7 +65,9 @@ export default function Post() {
               hover:opacity-40 transition-all"
                   />
                   <div className="z-50 absolute bottom-0 p-4">
-                    <p className="text-white font-extrabold">{post.title}</p>
+                    <p className="text-white font-extrabold">
+                      {post.name.replace('.md', '')}
+                    </p>
                   </div>
                 </div>
               </div>

@@ -25,13 +25,14 @@ export default defineConfig({
       component: './Home',
       icon: 'home',
     },
-    {
-      name: 'posts',
-      path: '/posts',
-      component: './Posts',
-      icon: 'read',
-    },
-    { path: '/posts/:postId', component: './Posts/$postId' },
+    // Hide this page for now
+    // {
+    //   name: 'posts',
+    //   path: '/posts',
+    //   component: './Posts',
+    //   icon: 'read',
+    // },
+    // { path: '/posts/:postId', component: './Posts/$postId' },
     {
       name: 'rss',
       path: '/rss',

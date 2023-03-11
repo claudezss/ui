@@ -1,9 +1,5 @@
 import { FloatButton } from 'antd';
-import { createFromIconfontCN } from '@ant-design/icons';
-
-const IconFont = createFromIconfontCN({
-  scriptUrl: ['//at.alicdn.com/t/c/font_3904671_ajgb77bq2ub.js'],
-});
+import { MyIcon } from '@/constants/icon';
 const FloatButtonProps = {
   target: '_blank',
 };
@@ -12,22 +8,22 @@ export default function FloatButtonGroup() {
   return (
     <FloatButton.Group shape="square" style={{ right: 15 }}>
       <FloatButton
-        icon={<IconFont type="icon-homelinkedin" />}
+        icon={<MyIcon type="icon-homelinkedin" />}
         href="https://www.linkedin.com/in/yan-zhang-a21428113/"
         {...FloatButtonProps}
       />
       <FloatButton
-        icon={<IconFont type="icon-homegithub" />}
+        icon={<MyIcon type="icon-homegithub" />}
         href="https://github.com/claudezss"
         {...FloatButtonProps}
       />
       <FloatButton
-        icon={<IconFont type="icon-homeorcid" />}
+        icon={<MyIcon type="icon-homeorcid" />}
         href="https://orcid.org/0000-0001-9867-4924"
         {...FloatButtonProps}
       />
       <FloatButton
-        icon={<IconFont type="icon-homebilibili" />}
+        icon={<MyIcon type="icon-homebilibili" />}
         href="https://space.bilibili.com/6151386"
         {...FloatButtonProps}
       />

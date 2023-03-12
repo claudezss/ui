@@ -25,6 +25,12 @@ export default defineConfig({
       component: './Home',
       icon: 'home',
     },
+    {
+      name: 'posts',
+      path: '/posts',
+      component: './Posts/blog.tsx',
+      icon: 'read',
+    },
     // Hide this page for now
     // {
     //   name: 'posts',

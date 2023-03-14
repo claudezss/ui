@@ -61,4 +61,8 @@ export default defineConfig({
       pathRewrite: { '^/rss-api': '' },
     },
   },
+  analytics: {
+    ga_v2: 'G-Z2BVXKPX8S',
+    ga: 'G-Z2BVXKPX8S',
+  },
 });

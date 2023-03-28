@@ -4,4 +4,5 @@ export default {
   'menu.admin': '后台',
   'menu.posts': '文章',
   'menu.rss': '订阅',
+  'menu.draw': 'Excalidraw',
 };

@@ -4,4 +4,5 @@ export default {
   'menu.admin': 'Admin',
   'menu.posts': 'Posts',
   'menu.rss': 'RSS',
+  'menu.draw': 'Excalidraw',
 };

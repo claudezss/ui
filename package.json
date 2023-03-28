@@ -13,9 +13,12 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@ant-design/pro-components": "^2.0.1",
+    "@excalidraw/excalidraw": "^0.14.2",
     "@umijs/max": "^4.0.49",
     "antd": "^5.0.0",
     "lottie-react": "^2.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-markdown": "^8.0.5"
   },
   "devDependencies": {

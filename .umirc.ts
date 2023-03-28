@@ -45,6 +45,12 @@ export default defineConfig({
       component: './RSS',
       icon: 'NotificationOutlined',
     },
+    {
+      name: 'draw',
+      path: '/draw',
+      component: './Draw',
+      icon: 'FormatPainterOutlined',
+    },
   ],
   npmClient: 'yarn',
   dva: {},

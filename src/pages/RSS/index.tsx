@@ -6,10 +6,10 @@ import type { TabsProps } from 'antd';
 import RSSList from '@/components/RSSList';
 
 const URLS: string[] = [
-  'http://api.claudezss.com/other-get?t=https://hnrss.org/best',
-  'http://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=Python',
-  'http://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=Golang',
-  'http://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=K8S',
+  'https://api.claudezss.com/other-get?t=https://hnrss.org/best',
+  'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=Python',
+  'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=Golang',
+  'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=K8S',
 ];
 
 export default function Post() {

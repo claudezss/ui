@@ -57,12 +57,12 @@ export default defineConfig({
   tailwindcss: {},
   proxy: {
     '/api': {
-      target: 'https://proxy.claudezss.com/',
+      target: 'http://api.claudezss.com/',
       changeOrigin: true,
       pathRewrite: { '^/api': '' },
     },
     '/rss-api': {
-      target: 'https://proxy.claudezss.com/',
+      target: 'http://api.claudezss.com/',
       changeOrigin: true,
       pathRewrite: { '^/rss-api': '' },
     },

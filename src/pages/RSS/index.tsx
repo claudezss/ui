@@ -9,6 +9,7 @@ const URLS: string[] = [
   'https://api.claudezss.com/other-get?t=https://hnrss.org/best',
   'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=Python',
   'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=Golang',
+  'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=Rust',
   'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=K8S',
 ];
 
@@ -49,6 +50,10 @@ export default function Post() {
     },
     {
       key: '3',
+      label: `Rust`,
+    },
+    {
+      key: '4',
       label: `K8S`,
     },
   ];

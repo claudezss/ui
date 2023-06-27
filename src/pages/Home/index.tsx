@@ -108,7 +108,12 @@ const HomePage: React.FC = () => {
           >
             <Typography>
               <Title>Work Experiences</Title>
-              <Title level={5}>2019 - Present, Software Developer</Title>
+              <Title level={5}>2023 - Present, Staff Software Engineer</Title>
+              <Paragraph>
+                <Text italic>Opus One Solutions From GE Digital</Text>
+              </Paragraph>
+
+              <Title level={5}>2019 - 2023, Software Developer</Title>
               <Paragraph>
                 <Text italic>Opus One Solutions From GE Digital</Text>
               </Paragraph>

@@ -6,11 +6,10 @@ import type { TabsProps } from 'antd';
 import RSSList from '@/components/RSSList';
 
 const URLS: string[] = [
-  'https://api.claudezss.com/other-get?t=https://hnrss.org/best',
-  'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=Python',
-  'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=Golang',
-  'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=Rust',
-  'https://api.claudezss.com/other-get?t=https://hnrss.org/newest?q=K8S',
+  'https://api.claudezss.com/other/redirect?url=https://hnrss.org/newest?q=Python',
+  'https://api.claudezss.com/other/redirect?url=https://hnrss.org/newest?q=Golang',
+  'https://api.claudezss.com/other/redirect?url=https://hnrss.org/newest?q=Rust',
+  'https://api.claudezss.com/other/redirect?url=https://hnrss.org/newest?q=K8S',
 ];
 
 export default function Post() {
@@ -20,6 +19,7 @@ export default function Post() {
     try {
       const res = await fetch(input_url);
       const rss = await res.text();
+      console.log(rss);
       if (res.status === 200) {
         setPosts(
           new window.DOMParser()
@@ -38,22 +38,18 @@ export default function Post() {
   const items: TabsProps['items'] = [
     {
       key: '0',
-      label: `Best`,
-    },
-    {
-      key: '1',
       label: `Python`,
     },
     {
-      key: '2',
+      key: '1',
       label: `Golang`,
     },
     {
-      key: '3',
+      key: '2',
       label: `Rust`,
     },
     {
-      key: '4',
+      key: '3',
       label: `K8S`,
     },
   ];

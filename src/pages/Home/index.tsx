@@ -1,9 +1,10 @@
 import { PageContainer } from '@ant-design/pro-components';
 
-import { Row, Col, Card, Typography, Divider } from 'antd';
+import { Row, Col, Card, Typography, Divider, List } from 'antd';
 import Yan from '@/assets/imgs/yan.jpeg';
 import Earth from '@/assets/imgs/Earth.jpg';
 import DATA from '@/assets/lotties/data.json';
+import ROBOT from '@/assets/lotties/robot.json';
 import FloatButtonGroup from '@/components/FloatButtonGroup';
 import Lottie from 'lottie-react';
 import { FormattedMessage } from 'umi';
@@ -94,9 +95,19 @@ const HomePage: React.FC = () => {
       </Row>
       <div style={{ paddingBottom: '20px' }} />
       <Card>
+        <Title
+          style={{
+            textAlign: 'center',
+            paddingBottom: '20px',
+            paddingTop: '20px',
+          }}
+        >
+          Work Experiences
+        </Title>
+
         <Row gutter={12} justify="space-evenly">
           <Col xs={24} sm={24} md={6} lg={8} xl={8}>
-            <Lottie animationData={DATA} style={{ paddingTop: '50px' }} />
+            <Lottie animationData={ROBOT} style={{ paddingTop: '40px' }} />
           </Col>
           <Col
             xs={24}
@@ -107,7 +118,6 @@ const HomePage: React.FC = () => {
             style={{ marginBottom: '15px', padding: '30px 40px 10px 40px' }}
           >
             <Typography>
-              <Title>Work Experiences</Title>
               <Title level={5}>2023 - Present, Staff Software Engineer</Title>
               <Paragraph>
                 <Text italic>Opus One Solutions From GE Digital</Text>
@@ -160,9 +170,20 @@ const HomePage: React.FC = () => {
                   </li>
                 </ul>
               </Paragraph>
-
-              <Divider />
-
+            </Typography>
+          </Col>
+        </Row>
+        <Divider />
+        <Row gutter={12} justify="space-evenly">
+          <Col
+            xs={24}
+            sm={24}
+            md={18}
+            lg={16}
+            xl={16}
+            style={{ marginBottom: '15px', padding: '30px 40px 10px 40px' }}
+          >
+            <Typography>
               <Title level={5}>2017 - 2019, Full Stack Developer</Title>
               <Paragraph>
                 <Text italic>GreenfieldSCM, Supply Chain Management</Text>
@@ -190,27 +211,64 @@ const HomePage: React.FC = () => {
                   <li>programming</li>
                 </ul>
               </Paragraph>
-
-              <Title>Publications</Title>
-              <Title level={5}>
-                <Link
-                  href="https://ieeexplore.ieee.org/abstract/document/9817498"
-                  target="_blank"
-                >
-                  Three-Phase Distribution Locational Marginal Pricing for
-                  Competitive Electricity Markets with Distributed Generators
-                  and Flexible Loads
-                </Link>
-              </Title>
-              <Paragraph>
-                <Text italic>
-                  2022 IEEE Power &amp; Energy Society Innovative Smart Grid
-                  Technologies Conference (ISGT)
-                </Text>
-              </Paragraph>
             </Typography>
           </Col>
+          <Col xs={24} sm={24} md={6} lg={8} xl={8}>
+            <Lottie animationData={DATA} />
+          </Col>
         </Row>
+      </Card>
+      <div style={{ paddingBottom: '20px' }} />
+      <Card>
+        <Title
+          style={{
+            textAlign: 'center',
+            paddingBottom: '10px',
+            paddingTop: '20px',
+          }}
+        >
+          Publications
+        </Title>
+
+        <List
+          itemLayout="vertical"
+          size="large"
+          dataSource={[
+            {
+              avatar:
+                'https://ieee-pes.org/wp-content/uploads/2022/12/ieee-pes-logo.png',
+              title:
+                'Three-Phase Distribution Locational Marginal Pricing for Competitive Electricity' +
+                ' Markets with Distributed Generators and Flexible Loads',
+              description:
+                '2022 IEEE Power & Energy Society Innovative Smart Grid Technologies Conference (ISGT)',
+              link: 'https://ieeexplore.ieee.org/abstract/document/9817498',
+            },
+          ]}
+          renderItem={(item) => (
+            <List.Item key={item.title}>
+              <Card hoverable>
+                <Row gutter={12}>
+                  <Col span={6}>
+                    {' '}
+                    <img width={150} alt="logo" src={item.avatar} />
+                  </Col>
+
+                  <Col span={18}>
+                    <Title level={5}>
+                      <Link href={item.link} target="_blank">
+                        {item.title}
+                      </Link>
+                    </Title>
+                    <Paragraph>
+                      <Text italic>{item.description}</Text>
+                    </Paragraph>
+                  </Col>
+                </Row>
+              </Card>
+            </List.Item>
+          )}
+        />
       </Card>
     </PageContainer>
   );

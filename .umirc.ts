@@ -28,17 +28,10 @@ export default defineConfig({
     {
       name: 'posts',
       path: '/posts',
-      component: './Posts/blog.tsx',
+      component: './Posts',
       icon: 'read',
     },
-    // Hide this page for now
-    // {
-    //   name: 'posts',
-    //   path: '/posts',
-    //   component: './Posts',
-    //   icon: 'read',
-    // },
-    // { path: '/posts/:postId', component: './Posts/$postId' },
+    { path: '/posts/:postId', component: './Posts/$postId' },
     {
       name: 'rss',
       path: '/rss',

@@ -4,21 +4,22 @@ import { history } from 'umi';
 import { PageContainer } from '@ant-design/pro-components';
 import BlogBG from '@/assets/imgs/blog.jpg';
 import FloatButtonGroup from '@/components/FloatButtonGroup';
+import { ProList } from '@ant-design/pro-components';
 
 export default function Post() {
   const [posts, setPosts] = useState<any[]>();
 
   async function refresh() {
     try {
-      const res = await fetch('https://proxy.claudezss.com/blog');
+      const res = await fetch('https://api.claudezss.com/blog/list');
       if (res.status !== 200) {
         console.error(await res.text());
       }
       setPosts(
         (await res.json()).sort(
           (p1: any, p2: any) =>
-            new Date(p2.lastModifiedDateTime).getTime() -
-            new Date(p1.lastModifiedDateTime).getTime(),
+            new Date(p2.last_modified).getTime() -
+            new Date(p1.last_modified).getTime(),
         ),
       );
     } catch (err) {
@@ -33,48 +34,32 @@ export default function Post() {
   return (
     <PageContainer ghost>
       <FloatButtonGroup />
-      <div className="flex flex-row w-full justify-center flex-wrap">
-        {!posts && (
-          <div className="fixed w-screen h-screen flex justify-center items-center">
-            <p className="animate-pulse">Loading...</p>
-          </div>
-        )}
-        {posts && (
-          <div
-            className="container flex flex-row w-full justify-center
-       flex-wrap p-4 px-2 md:px-24 xl:px-64"
-          >
-            {posts.map((post) => (
-              <div key={post.id} className="w-full lg:w-1/2 p-4">
-                <div
-                  onClick={() =>
-                    history.push(
-                      `/posts/${post.id}?title=${post.name.replace('.md', '')}`,
-                    )
-                  }
-                  className="w-full h-64 bg-white relative transition-all
-          rounded-xl overflow-hidden cursor-pointer hover:shadow-xl"
-                >
-                  <img
-                    src={post.image_url ? post.image_url : BlogBG}
-                    alt=""
-                    className="absolute top-0 w-full h-full"
-                  />
-                  <div
-                    className="absolute top-0 w-full h-full bg-black opacity-10
-              hover:opacity-40 transition-all"
-                  />
-                  <div className="z-50 absolute bottom-0 p-4">
-                    <p className="text-white font-extrabold">
-                      {post.name.replace('.md', '')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      <ProList<{ name: string }>
+        itemLayout="vertical"
+        rowKey="name"
+        dataSource={posts}
+        showExtra="always"
+        onItem={(post: any) => {
+          return {
+            onClick: () => {
+              history.push(`/posts/${post.key}?title=${post.name}`);
+            },
+          };
+        }}
+        metas={{
+          title: {
+            dataIndex: 'name',
+          },
+          description: {
+            dataIndex: 'last_modified',
+          },
+          actions: {},
+          extra: {
+            render: () => <img width={272} alt="logo" src={BlogBG} />,
+          },
+          content: {},
+        }}
+      />
     </PageContainer>
   );
 }

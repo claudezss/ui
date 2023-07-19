@@ -10,6 +10,7 @@ import Lottie from 'lottie-react';
 import { FormattedMessage } from 'umi';
 import { MyIcon } from '@/constants/icon';
 import { useIntl } from 'umi';
+import './style.css';
 
 const { Meta } = Card;
 const { Title, Paragraph, Text, Link } = Typography;
@@ -107,17 +108,10 @@ const HomePage: React.FC = () => {
 
         <Row gutter={12} justify="space-evenly">
           <Col xs={24} sm={24} md={6} lg={8} xl={8}>
-            <Lottie animationData={ROBOT} style={{ paddingTop: '40px' }} />
+            <Lottie animationData={ROBOT} style={{ paddingBottom: '20px' }} />
           </Col>
-          <Col
-            xs={24}
-            sm={24}
-            md={18}
-            lg={16}
-            xl={16}
-            style={{ marginBottom: '15px', padding: '30px 40px 10px 40px' }}
-          >
-            <Typography>
+          <Col xs={24} sm={24} md={18} lg={16} xl={16}>
+            <Typography className="main-body-col">
               <Title level={5}>2023 - Present, Staff Software Engineer</Title>
               <Paragraph>
                 <Text italic>Opus One Solutions From GE Digital</Text>
@@ -175,15 +169,8 @@ const HomePage: React.FC = () => {
         </Row>
         <Divider />
         <Row gutter={12} justify="space-evenly">
-          <Col
-            xs={24}
-            sm={24}
-            md={18}
-            lg={16}
-            xl={16}
-            style={{ marginBottom: '15px', padding: '30px 40px 10px 40px' }}
-          >
-            <Typography>
+          <Col xs={24} sm={24} md={18} lg={16} xl={16}>
+            <Typography className="main-body-col">
               <Title level={5}>2017 - 2019, Full Stack Developer</Title>
               <Paragraph>
                 <Text italic>GreenfieldSCM, Supply Chain Management</Text>
@@ -249,12 +236,11 @@ const HomePage: React.FC = () => {
             <List.Item key={item.title}>
               <Card hoverable>
                 <Row gutter={12}>
-                  <Col span={6}>
-                    {' '}
+                  <Col xs={0} sm={0} md={6} lg={6} xl={6}>
                     <img width={150} alt="logo" src={item.avatar} />
                   </Col>
 
-                  <Col span={18}>
+                  <Col xs={24} sm={24} md={18} lg={18} xl={18}>
                     <Title level={5}>
                       <Link href={item.link} target="_blank">
                         {item.title}

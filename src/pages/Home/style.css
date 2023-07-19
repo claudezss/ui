@@ -1,0 +1,12 @@
+.main-body-col {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media all and (max-width: 600px) and (orientation: landscape) {
+  .main-body-col {
+    margin-bottom: 10px;
+    padding-top: 20px;
+  }
+}

@@ -11,7 +11,7 @@ export default function Post() {
 
   async function refresh() {
     try {
-      const res = await fetch('https://api.claudezss.com/blog/list');
+      const res = await fetch('https://api.claudezss.com/post');
       if (res.status !== 200) {
         console.error(await res.text());
       }

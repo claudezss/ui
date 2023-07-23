@@ -20,7 +20,7 @@ export default function PostPage() {
   async function refresh() {
     try {
       const res = await fetch(
-        'https://api.claudezss.com/blog/get/' + params.postId,
+        'https://api.claudezss.com/post/' + params.postId,
       );
       if (res.status !== 200) {
         console.error(await res.text());
